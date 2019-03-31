@@ -1,6 +1,7 @@
 """ This file contains the runner """
 import logging
 import sys
+import yaml
 from datetime import datetime
 import businesstime
 from dateutil import parser
