@@ -39,7 +39,7 @@ def main(force=False):
         ORGANIZATION = yamlContent['ORGANIZATION']
         REPO_NAME = yamlContent['REPO_NAME']
         STATE = yamlContent['STATE']
-        NOMI = yamlContent['NOMI']
+        NAMES = yamlContent['NAMES']
         RESERVED_LABELS = yamlContent['RESERVED_LABELS']
 
     # Check DB
@@ -88,7 +88,7 @@ def main(force=False):
             d['assignee'] = i['assignee']['login']
             # Get events
             events = ghapi.get_url(i['events_url'])
-            if i['assignee']['login'] in NOMI and events:
+            if i['assignee']['login'] in NAMES and events:
                 for e in events:
                     if(e['event'] == 'assigned'):
                         d['assigned_on'] = parser.parse(e['created_at'], ignoretz=True)
