@@ -1,9 +1,9 @@
-*.s
 .venv
 *.csv
 *.swp
 *.swo
 *.pyc
+*.yaml
 secrets
 private
 tmp

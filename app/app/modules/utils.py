@@ -16,7 +16,8 @@ TMP_DIR = '/tmp/'
 INDEX_FILE = 'index.html'
 REPORT_DIR = '../report/'
 
-def check_label(labels,reserved_labels):
+def check_label(labels, reserved_labels):
+    """ Check if label is in list of reserved labels """
     if not labels:
         return False
     for reserved_label in reserved_labels:
@@ -41,7 +42,7 @@ def tpl_render(dict_list, no_triage, late_triage, sol_fine, since):
     match = re.search(r'\d{4}-\d{2}-\d{2}', since)
     since = datetime.strptime(match.group(), '%Y-%m-%d').date()
     my_path = path.abspath(path.dirname(__file__))
-    
+
     output = renderer.render_path(
         path.join(my_path, TEMPLATE_DIR + "index.mustache"), {
             'lista' : dict_list,
