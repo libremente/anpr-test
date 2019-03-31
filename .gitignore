@@ -4,7 +4,6 @@
 *.swo
 *.pyc
 *.yaml
-secrets
 private
 tmp
 static
