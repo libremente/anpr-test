@@ -72,8 +72,6 @@ def main(force=False):
         # Labels - If 'avvisi', go to next issue
         if check_label(i['labels'], RESERVED_LABELS):
             continue
-        else:
-            pass
 
         # 1.a. - no-triage
         if not i['assignee']:
