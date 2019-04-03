@@ -34,7 +34,7 @@ def main(force=False):
     my_path = path.abspath(path.dirname(__file__))
 
     with open(path.join(my_path, PRIVATE_DIR + "conf.yaml"), 'r') as f_in:
-        yamlContent = yaml.load(f_in)
+        yamlContent = yaml.load(f_in, Loader=yaml.FullLoader)
         CLIENT_ID = yamlContent['CLIENT_ID']
         CLIENT_SECRET = yamlContent['CLIENT_SECRET']
         ORGANIZATION = yamlContent['ORGANIZATION']
